@@ -193,5 +193,22 @@ function detectVerticalSquash(img) {
   var ratio = (py / ih);
   return (ratio===0)?1:ratio;
 }
+function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
+  var vertSquashRatio = detectVerticalSquash(img);
+  ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
+}
+
+
+/* wait for page */
+window.onload = function() {
+
+  // get file input
+  var fileInput = document.getElementById('fileInput');
+
+  // get message area
+  var messageDisplayArea = document.getElementById('messageDisplayArea');
+
+  // when file changes
+  fileInput.addEventListener('change', function(e) {
 
 
