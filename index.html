@@ -210,5 +210,26 @@ window.onload = function() {
 
   // when file changes
   fileInput.addEventListener('change', function(e) {
+  var file = fileInput.files[0];
+
+    var imageType = /image.*/;
+
+    // check if image
+    if (file.type.match(imageType)) {
+
+      var reader = new FileReader();
+
+      // when file loads
+      reader.onload = function(e) {
+
+        messageDisplayArea.innerHTML = "Image loaded";
+
+        var img = new Image();
+
+        // when image loads
+        img.onload = function() {
+
+          // draw original image
+          drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
 
 
