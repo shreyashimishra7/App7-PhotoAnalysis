@@ -231,5 +231,21 @@ window.onload = function() {
 
           // draw original image
           drawImageIOSFix(context,img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 600, 500);
+ /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
+
+          // get second canvas
+          var canvas2 = document.getElementById("canvas2");
+
+          // get drawing tool
+          var ctx2 = canvas2.getContext("2d");
+
+          // get image data from first canvas
+          var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+          // get pixel data array
+          var data = imageData.data;
+
+          // loop through pixels
+          for (var i = 0; i < data.length; i += 4) {
 
 
