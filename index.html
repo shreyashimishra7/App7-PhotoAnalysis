@@ -248,4 +248,42 @@ window.onload = function() {
           // loop through pixels
           for (var i = 0; i < data.length; i += 4) {
 
+// red = i
+            // green = i+1
+            // blue = i+2
+
+            // remove red
+            data[i] = 0;
+
+            // remove green
+            data[i+1] = 0;
+
+            // keep blue (do nothing)
+          }
+
+          // put new image on canvas 2
+          ctx2.putImageData(imageData, 0, 0);
+
+
+          /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+        } // end img.onload
+
+        img.src = reader.result;
+
+      } // end reader.onload
+
+      reader.readAsDataURL(file);
+
+    } 
+    else {
+
+      // not image
+      messageDisplayArea.innerHTML = "Not an image";
+
+    }
+
+  });
+
+}
 
