@@ -286,4 +286,41 @@ window.onload = function() {
   });
 
 }
+</script>
+</head>
+
+<body>
+
+<div data-role="page">
+
+<div data-role="header">
+<h1>Blue Detector</h1>
+</div>
+
+<div data-role="content">	
+
+<h3>Pick an image</h3>
+
+<!-- file button -->
+<input type="file" id="fileInput" style="background-color: orange;">
+
+<!-- message -->
+<div id="messageDisplayArea"></div>
+
+<br>
+
+<!-- canvas 1 -->
+<canvas id="myCanvas" width=600 height=500 style="border:1px solid black;"></canvas>
+
+<script>
+// setup canvas 1
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext("2d");
+
+// text on canvas
+context.font = '20pt Arial';
+context.fillText("Original image", 10, 30);
+</script>
+
+<br><br>
 
